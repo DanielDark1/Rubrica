@@ -1,15 +1,23 @@
 #include <stdio.h>
 #include <string.h>
+#include "struct.h"
+
+extern struct contatto Contatto[MAX];
+
 void rimuoviContatto() {
-	if(strcmp(Contatto[0].numero, "0") == 0) {
+	int s=0,i;
+	for(i=0;i<MAX;i++) {
+		if(strcmp(Contatto[i].numero, "0") != 0) s=1;
+	}
+	if(!s) {
         printf("\nNessun contatto registrato.\n\n");
         return;
     }
-	int i,scelta,a=1;
+	int scelta,a=1;
 	char numero[10],confirm;
 	while(a) {
 		printf("Inserisci il numero del contatto: ");
-		scanf("%s",&numero);
+		scanf("%s",numero);
 		for(i=0;i<MAX;i++) {
 			if(strcmp(numero,Contatto[i].numero) == 0) {
 	            printf("\n-------------\n");

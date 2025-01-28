@@ -3,6 +3,9 @@
 #include "struct.h"
 #include "funcs.h"
 #define MAX 20
+
+struct contatto Contatto[MAX];
+
 int main() {
 	int scelta=1,i;
 	for(i=0;i<MAX;i++) strcpy(Contatto[i].numero, "0");
